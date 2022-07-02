@@ -1,6 +1,7 @@
 const assert = require('assert');
 const crypto = require('crypto');
 const storage = require('../storage');
+const config = require('../config');
 const fxa = require('../fxa');
 
 module.exports = {
@@ -70,10 +71,11 @@ module.exports = {
       const token = authHeader.split(' ')[1];
       req.user = await fxa.verify(token);
     }
-    if (req.user) {
-      next();
-    } else {
+
+    if (config.fxa_required && !req.user) {
       res.sendStatus(401);
+    } else {
+      next();
     }
   }
 };
