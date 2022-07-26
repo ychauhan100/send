@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const promisify = require('util').promisify;
-const mkdirp = require('mkdirp');
 
 const stat = promisify(fs.stat);
 
@@ -9,7 +8,9 @@ class FSStorage {
   constructor(config, log) {
     this.log = log;
     this.dir = config.file_dir;
-    mkdirp.sync(this.dir);
+    fs.mkdirSync(this.dir, {
+      recursive: true
+    });
   }
 
   async length(id) {
