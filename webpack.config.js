@@ -58,9 +58,18 @@ const serviceWorker = {
             loader: 'svgo-loader',
             options: {
               plugins: [
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true } // for smallness
+                {
+                  name: 'removeViewBox',
+                  active: false // true causes stretched images
+                },
+                {
+                  name: 'convertStyleToAttrs',
+                  active: true // for CSP, no unsafe-eval
+                },
+                {
+                  name: 'removeTitle',
+                  active: true // for smallness
+                }
               ]
             }
           }
@@ -143,10 +152,22 @@ const web = {
             loader: 'svgo-loader',
             options: {
               plugins: [
-                { cleanupIDs: false },
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true } // for smallness
+                {
+                  name: 'cleanupIDs',
+                  active: false
+                },
+                {
+                  name: 'removeViewBox',
+                  active: false // true causes stretched images
+                },
+                {
+                  name: 'convertStyleToAttrs',
+                  active: true // for CSP, no unsafe-eval
+                },
+                {
+                  name: 'removeTitle',
+                  active: true // for smallness
+                }
               ]
             }
           }
