@@ -42,7 +42,8 @@ const serviceWorker = {
         test: /\.(png|jpg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[contenthash:8].[ext]'
+          name: '[name].[contenthash:8].[ext]',
+          esModule: false
         }
       },
       {
@@ -51,7 +52,8 @@ const serviceWorker = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[contenthash:8].[ext]'
+              name: '[name].[contenthash:8].[ext]',
+              esModule: false
             }
           },
           {
@@ -136,7 +138,8 @@ const web = {
         test: /\.(png|jpg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[contenthash:8].[ext]'
+          name: '[name].[contenthash:8].[ext]',
+          esModule: false
         }
       },
       {
@@ -145,7 +148,8 @@ const web = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[contenthash:8].[ext]'
+              name: '[name].[contenthash:8].[ext]',
+              esModule: false
             }
           },
           {
@@ -206,12 +210,14 @@ const web = {
     ]
   },
   plugins: [
-    new CopyPlugin([
-      {
-        context: 'public',
-        from: '*.*'
-      }
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: 'public',
+          from: '*.*'
+        }
+      ]
+    }),
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.IgnorePlugin(/\.\.\/dist/), // used in common/*.js
     new ExtractTextPlugin({
