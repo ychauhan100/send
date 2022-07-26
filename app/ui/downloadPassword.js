@@ -17,7 +17,7 @@ module.exports = function(state, emit) {
         ${state.translate('downloadDescription')}
       </p>
       <form
-        class="flex flex-row flex-no-wrap w-full md:w-4/5"
+        class="flex flex-row flex-nowrap w-full md:w-4/5"
         onsubmit="${checkPassword}"
         data-no-csrf
       >

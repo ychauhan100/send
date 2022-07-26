@@ -181,7 +181,8 @@ const web = {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1
+                importLoaders: 1,
+                esModule: false
               }
             },
             'postcss-loader'

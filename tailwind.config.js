@@ -23,6 +23,7 @@ const colors = {
 };
 
 module.exports = {
+  purge: false,
   theme: {
     colors: colors,
     screens: {
