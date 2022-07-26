@@ -131,8 +131,8 @@
   },
   "dependencies": {
     "@dannycoates/express-ws": "^5.0.3",
-    "@fluent/bundle": "^0.13.0",
-    "@fluent/langneg": "^0.3.0",
+    "@fluent/bundle": "^0.17.1",
+    "@fluent/langneg": "^0.6.2",
     "@google-cloud/storage": "^5.19.0",
     "@sentry/node": "^5.30.0",
     "aws-sdk": "^2.1109.0",
