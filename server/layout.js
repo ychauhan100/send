@@ -41,6 +41,11 @@ module.exports = function(state, body = '') {
           href="${assets.get('app.css')}"
         />
         <link
+          rel="stylesheet"
+          type="text/css"
+          href="${state.ui.assets.custom_css}"
+		/>
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="${state.ui.assets.apple_touch_icon}"
