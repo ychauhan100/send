@@ -1,8 +1,6 @@
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:/]+/g) || [];
-  }
-}
+const TailwindExtractor = content => {
+  return content.match(/[A-Za-z0-9-_:/]+/g) || [];
+};
 
 const options = {
   plugins: [

@@ -1,13 +1,15 @@
 const fs = require('fs');
 const path = require('path');
-const { FluentBundle } = require('@fluent/bundle');
+const { FluentBundle, FluentResource } = require('@fluent/bundle');
 const localesPath = path.resolve(__dirname, '../public/locales');
 const locales = fs.readdirSync(localesPath);
 
 function makeBundle(locale) {
   const bundle = new FluentBundle(locale, { useIsolating: false });
-  bundle.addMessages(
-    fs.readFileSync(path.resolve(localesPath, locale, 'send.ftl'), 'utf8')
+  bundle.addResource(
+    new FluentResource(
+      fs.readFileSync(path.resolve(localesPath, locale, 'send.ftl'), 'utf8')
+    )
   );
   return [locale, bundle];
 }
@@ -19,8 +21,11 @@ module.exports = function getTranslator(locale) {
   const bundle = bundles.get(locale) || defaultBundle;
   return function(id, data) {
     if (bundle.hasMessage(id)) {
-      return bundle.format(bundle.getMessage(id), data);
+      return bundle.formatPattern(bundle.getMessage(id).value, data);
     }
-    return defaultBundle.format(defaultBundle.getMessage(id), data);
+    return defaultBundle.formatPattern(
+      defaultBundle.getMessage(id).value,
+      data
+    );
   };
 };
