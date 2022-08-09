@@ -134,7 +134,6 @@
     "body-parser": "^1.20.0",
     "choo": "^7.0.0",
     "cldr-core": "^35.1.0",
-    "configstore": "github:dannycoates/configstore#master",
     "convict": "^6.2.3",
     "convict-format-with-validator": "^6.2.0",
     "double-ended-queue": "^2.1.0-0",
