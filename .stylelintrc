@@ -11,3 +11,5 @@ rules:
   selector-list-comma-newline-after: null
   value-list-comma-newline-after: null
   at-rule-no-unknown: null
+  # Conflicts with prettier
+  string-quotes: null
