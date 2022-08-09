@@ -71,8 +71,7 @@ body {
 
 .checkbox > label::before {
   /* @apply bg-grey-10; */
-  border-width: 1px;
-
+  @apply border-default;
   @apply rounded-sm;
 
   content: '';
@@ -314,8 +313,7 @@ select {
 
   @screen md {
     .main > section {
-      border-width: 1px;
-
+      @apply border-default;
       @apply border-grey-80;
     }
   }

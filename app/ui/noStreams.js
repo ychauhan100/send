@@ -12,12 +12,12 @@ module.exports = function(state, emit) {
         'downloadTitle'
       )}</h1>
       <p
-        class="w-full p-2 border border-yellow-50 rounded md:w-4/5 text-orange-60 bg-yellow-40 text-center leading-normal"
+        class="w-full p-2 border-default border-yellow-50 rounded-default md:w-4/5 text-orange-60 bg-yellow-40 text-center leading-normal"
       >
         ⚠️ ${state.translate('noStreamsWarning')} ⚠️
       </p>
       <form class="md:w-128" onsubmit=${submit}>
-        <fieldset class="border rounded p-4 my-4" onchange=${optionChanged}>
+        <fieldset class="border-default rounded-default p-4 my-4" onchange=${optionChanged}>
           <div class="flex items-center mb-2">
             <svg class="h-8 w-6 mr-3 flex-shrink-0 text-primary">
               <use xlink:href="${assets.get('blue_file.svg')}#icon"/>

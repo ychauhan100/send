@@ -83,7 +83,7 @@ class Account extends Component {
         <input
           type="image"
           alt="${user.email}"
-          class="w-8 h-8 rounded-full border text-primary md:text-white focus:outline"
+          class="w-8 h-8 rounded-full border-default text-primary md:text-white focus:outline"
           src="${user.avatar}"
           onclick="${e => this.avatarClick(e)}"
         />
