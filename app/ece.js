@@ -48,7 +48,7 @@ class ECETransformer {
         name: 'AES-GCM',
         length: 128
       },
-      true, // Edge polyfill requires key to be extractable to encrypt :/
+      false,
       ['encrypt', 'decrypt']
     );
   }

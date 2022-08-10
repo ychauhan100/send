@@ -111,10 +111,6 @@ const web = {
               path.resolve(__dirname, 'common'),
               // some dependencies need to get re-babeled because we
               // have different targets than their default configs
-              path.resolve(
-                __dirname,
-                'node_modules/@dannycoates/webcrypto-liner'
-              ),
               path.resolve(__dirname, 'node_modules/@fluent'),
               path.resolve(__dirname, 'node_modules/intl-pluralrules')
             ],
@@ -127,8 +123,7 @@ const web = {
               path.resolve(__dirname, 'node_modules/crc'),
               path.resolve(__dirname, 'node_modules/@fluent'),
               path.resolve(__dirname, 'node_modules/@sentry'),
-              path.resolve(__dirname, 'node_modules/tslib'),
-              path.resolve(__dirname, 'node_modules/webcrypto-core')
+              path.resolve(__dirname, 'node_modules/tslib')
             ],
             loader: 'webpack-unassert-loader'
           }

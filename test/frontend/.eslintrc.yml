@@ -5,4 +5,4 @@ parserOptions:
   sourceType: module
 
 rules:
-  node/no-unsupported-features: off
+  n/no-unsupported-features: off

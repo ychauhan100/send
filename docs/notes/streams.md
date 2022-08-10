@@ -6,8 +6,6 @@
   - https://github.com/whatwg/streams/tree/master/reference-implementation
 - Examples
   - https://github.com/mdn/dom-examples/tree/master/streams
-- Polyfill
-  - https://github.com/MattiasBuelens/web-streams-polyfill
 
 # Encrypted Content Encoding
 
