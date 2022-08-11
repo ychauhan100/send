@@ -253,6 +253,16 @@ const conf = convict({
     default: 'https://github.com/timvisee/send',
     env: 'SEND_FOOTER_SOURCE_URL'
   },
+  custom_footer_text: {
+    format: String,
+    default: '',
+    env: 'CUSTOM_FOOTER_TEXT'
+  },
+  custom_footer_url: {
+    format: String,
+    default: '',
+    env: 'CUSTOM_FOOTER_URL'
+  },
   ui_color_primary: {
     format: String,
     default: '#0a84ff',

@@ -13,6 +13,8 @@ module.exports = {
     FOOTER_CLI_URL: config.footer_cli_url,
     FOOTER_DMCA_URL: config.footer_dmca_url,
     FOOTER_SOURCE_URL: config.footer_source_url,
+    CUSTOM_FOOTER_TEXT: config.custom_footer_text,
+    CUSTOM_FOOTER_URL: config.custom_footer_url,
     COLORS: {
       PRIMARY: config.ui_color_primary,
       ACCENT: config.ui_color_accent
