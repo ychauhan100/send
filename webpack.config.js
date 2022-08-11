@@ -42,7 +42,8 @@ const serviceWorker = {
         test: /\.(png|jpg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[contenthash:8].[ext]'
+          name: '[name].[contenthash:8].[ext]',
+          esModule: false
         }
       },
       {
@@ -51,16 +52,26 @@ const serviceWorker = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[contenthash:8].[ext]'
+              name: '[name].[contenthash:8].[ext]',
+              esModule: false
             }
           },
           {
             loader: 'svgo-loader',
             options: {
               plugins: [
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true } // for smallness
+                {
+                  name: 'removeViewBox',
+                  active: false // true causes stretched images
+                },
+                {
+                  name: 'convertStyleToAttrs',
+                  active: true // for CSP, no unsafe-eval
+                },
+                {
+                  name: 'removeTitle',
+                  active: true // for smallness
+                }
               ]
             }
           }
@@ -100,10 +111,6 @@ const web = {
               path.resolve(__dirname, 'common'),
               // some dependencies need to get re-babeled because we
               // have different targets than their default configs
-              path.resolve(
-                __dirname,
-                'node_modules/@dannycoates/webcrypto-liner'
-              ),
               path.resolve(__dirname, 'node_modules/@fluent'),
               path.resolve(__dirname, 'node_modules/intl-pluralrules')
             ],
@@ -116,8 +123,7 @@ const web = {
               path.resolve(__dirname, 'node_modules/crc'),
               path.resolve(__dirname, 'node_modules/@fluent'),
               path.resolve(__dirname, 'node_modules/@sentry'),
-              path.resolve(__dirname, 'node_modules/tslib'),
-              path.resolve(__dirname, 'node_modules/webcrypto-core')
+              path.resolve(__dirname, 'node_modules/tslib')
             ],
             loader: 'webpack-unassert-loader'
           }
@@ -127,7 +133,8 @@ const web = {
         test: /\.(png|jpg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[contenthash:8].[ext]'
+          name: '[name].[contenthash:8].[ext]',
+          esModule: false
         }
       },
       {
@@ -136,17 +143,30 @@ const web = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[contenthash:8].[ext]'
+              name: '[name].[contenthash:8].[ext]',
+              esModule: false
             }
           },
           {
             loader: 'svgo-loader',
             options: {
               plugins: [
-                { cleanupIDs: false },
-                { removeViewBox: false }, // true causes stretched images
-                { convertStyleToAttrs: true }, // for CSP, no unsafe-eval
-                { removeTitle: true } // for smallness
+                {
+                  name: 'cleanupIDs',
+                  active: false
+                },
+                {
+                  name: 'removeViewBox',
+                  active: false // true causes stretched images
+                },
+                {
+                  name: 'convertStyleToAttrs',
+                  active: true // for CSP, no unsafe-eval
+                },
+                {
+                  name: 'removeTitle',
+                  active: true // for smallness
+                }
               ]
             }
           }
@@ -160,7 +180,8 @@ const web = {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1
+                importLoaders: 1,
+                esModule: false
               }
             },
             'postcss-loader'
@@ -184,12 +205,14 @@ const web = {
     ]
   },
   plugins: [
-    new CopyPlugin([
-      {
-        context: 'public',
-        from: '*.*'
-      }
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: 'public',
+          from: '*.*'
+        }
+      ]
+    }),
     new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.IgnorePlugin(/\.\.\/dist/), // used in common/*.js
     new ExtractTextPlugin({

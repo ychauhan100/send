@@ -7,17 +7,14 @@ html {
 @tailwind components;
 
 :not(input) {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 :root {
   --violet-gradient: linear-gradient(
     -180deg,
-    rgba(144, 89, 255, 0.8) 0%,
-    rgba(144, 89, 255, 0.4) 100%
+    rgb(144 89 255 / 80%) 0%,
+    rgb(144 89 255 / 40%) 100%
   );
 }
 
@@ -71,7 +68,7 @@ body {
 
 .checkbox > label::before {
   /* @apply bg-grey-10; */
-  @apply border;
+  @apply border-default;
   @apply rounded-sm;
 
   content: '';
@@ -204,19 +201,18 @@ progress::-webkit-progress-value {
   background-image: -webkit-linear-gradient(
       -45deg,
       transparent 20%,
-      rgba(255, 255, 255, 0.4) 20%,
-      rgba(255, 255, 255, 0.4) 40%,
+      rgb(255 255 255 / 40%) 20%,
+      rgb(255 255 255 / 40%) 40%,
       transparent 40%,
       transparent 60%,
-      rgba(255, 255, 255, 0.4) 60%,
-      rgba(255, 255, 255, 0.4) 80%,
+      rgb(255 255 255 / 40%) 60%,
+      rgb(255 255 255 / 40%) 80%,
       transparent 80%
     ),
     -webkit-linear-gradient(left, var(--color-primary), var(--color-primary));
   /* stylelint-enable */
   border-radius: 2px;
   background-size: 21px 20px, 100% 100%, 100% 100%;
-  -webkit-animation: animate-stripes 1s linear infinite;
 }
 
 progress::-moz-progress-bar {
@@ -224,12 +220,12 @@ progress::-moz-progress-bar {
   background-image: -moz-linear-gradient(
       135deg,
       transparent 20%,
-      rgba(255, 255, 255, 0.4) 20%,
-      rgba(255, 255, 255, 0.4) 40%,
+      rgb(255 255 255 / 40%) 20%,
+      rgb(255 255 255 / 40%) 40%,
       transparent 40%,
       transparent 60%,
-      rgba(255, 255, 255, 0.4) 60%,
-      rgba(255, 255, 255, 0.4) 80%,
+      rgb(255 255 255 / 40%) 60%,
+      rgb(255 255 255 / 40%) 80%,
       transparent 80%
     ),
     -moz-linear-gradient(left, var(--color-primary), var(--color-primary));
@@ -237,12 +233,6 @@ progress::-moz-progress-bar {
   border-radius: 2px;
   background-size: 21px 20px, 100% 100%, 100% 100%;
   animation: animate-stripes 1s linear infinite;
-}
-
-@-webkit-keyframes animate-stripes {
-  100% {
-    background-position: -21px 0;
-  }
 }
 
 @keyframes animate-stripes {
@@ -313,7 +303,7 @@ select {
 
   @screen md {
     .main > section {
-      @apply border;
+      @apply border-default;
       @apply border-grey-80;
     }
   }
@@ -323,13 +313,12 @@ select {
 
 @responsive {
   .shadow-light {
-    box-shadow: 0 0 8px 0 rgba(12, 12, 13, 0.1);
+    box-shadow: 0 0 8px 0 rgb(12 12 13 / 10%);
   }
 
   .shadow-big {
-    box-shadow: 0 12px 18px 2px rgba(34, 0, 51, 0.04),
-      0 6px 22px 4px rgba(7, 48, 114, 0.12),
-      0 6px 10px -4px rgba(14, 13, 26, 0.12);
+    box-shadow: 0 12px 18px 2px rgb(34 0 51 / 4%),
+      0 6px 22px 4px rgb(7 48 114 / 12%), 0 6px 10px -4px rgb(14 13 26 / 12%);
   }
 }
 

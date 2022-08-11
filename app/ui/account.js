@@ -83,13 +83,13 @@ class Account extends Component {
         <input
           type="image"
           alt="${user.email}"
-          class="w-8 h-8 rounded-full border text-primary md:text-white focus:outline"
+          class="w-8 h-8 rounded-full border-default text-primary md:text-white focus:outline"
           src="${user.avatar}"
           onclick="${e => this.avatarClick(e)}"
         />
         <ul
           id="accountMenu"
-          class="invisible absolute top-0 right-0 mt-10 pt-2 pb-2 bg-white shadow-md whitespace-no-wrap outline-none z-50 dark:bg-grey-80"
+          class="invisible absolute top-0 right-0 mt-10 pt-2 pb-2 bg-white shadow-md whitespace-nowrap outline-none z-50 dark:bg-grey-80"
           onblur="${e => this.hideMenu(e)}"
         >
           <li class="p-2 text-grey-60 dark:text-grey-50">${user.email}</li>

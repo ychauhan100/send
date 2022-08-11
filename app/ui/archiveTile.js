@@ -53,7 +53,7 @@ function password(state) {
           id="password-input"
           class="${state.archive.password
             ? ''
-            : 'invisible'} border rounded focus:border-primary leading-normal my-1 py-1 px-2 h-8 dark:bg-grey-80"
+            : 'invisible'} border-default rounded-default focus:border-primary leading-normal my-1 py-1 px-2 h-8 dark:bg-grey-80"
           autocomplete="off"
           maxlength="${MAX_LENGTH}"
           type="password"
@@ -261,7 +261,7 @@ module.exports = function(state, emit, archive) {
   return html`
     <send-archive
       id="archive-${archive.id}"
-      class="flex flex-col items-start rounded shadow-light bg-white p-4 w-full dark:bg-grey-90 dark:border dark:border-grey-70"
+      class="flex flex-col items-start rounded-default shadow-light bg-white p-4 w-full dark:bg-grey-90 dark:border-default dark:border-grey-70"
     >
       ${archiveInfo(
         archive,
@@ -335,7 +335,7 @@ module.exports.wip = function(state, emit) {
             fileInfo(f, remove(f, state.translate('deleteButtonHover')))
           ),
         'flex-shrink bg-grey-10 rounded-t overflow-y-auto px-6 py-4 md:h-full md:max-h-half-screen dark:bg-black',
-        'bg-white px-2 my-2 shadow-light rounded dark:bg-grey-90 dark:border dark:border-grey-80'
+        'bg-white px-2 my-2 shadow-light rounded-default dark:bg-grey-90 dark:border-default dark:border-grey-80'
       )}
       <div
         class="flex-shrink-0 flex-grow flex items-end p-4 bg-grey-10 rounded-b mb-1 font-medium dark:bg-grey-90"
@@ -438,7 +438,7 @@ module.exports.uploading = function(state, emit) {
   return html`
     <send-upload-area
       id="${archive.id}"
-      class="flex flex-col items-start rounded shadow-light bg-white p-4 w-full dark:bg-grey-90"
+      class="flex flex-col items-start rounded-default shadow-light bg-white p-4 w-full dark:bg-grey-90"
     >
       ${archiveInfo(archive)}
       <div class="text-xs opacity-75 w-full mt-2 mb-2">
@@ -488,7 +488,7 @@ module.exports.empty = function(state, emit) {
         `;
   return html`
     <send-upload-area
-      class="flex flex-col items-center justify-center border-2 border-dashed border-grey-transparent rounded px-6 py-16 h-full w-full dark:border-grey-60"
+      class="flex flex-col items-center justify-center border-2 border-dashed border-grey-transparent rounded-default px-6 py-16 h-full w-full dark:border-grey-60"
       onclick="${e => {
         if (e.target.tagName !== 'LABEL') {
           document.getElementById('file-upload').click();
@@ -563,7 +563,7 @@ module.exports.preview = function(state, emit) {
     <send-archive
       class="flex flex-col max-h-full bg-white p-4 w-full md:w-128 dark:bg-grey-90"
     >
-      <div class="border rounded py-3 px-6 dark:border-grey-70">
+      <div class="border-default rounded-default py-3 px-6 dark:border-grey-70">
         ${archiveInfo(archive)} ${details}
       </div>
       <button
@@ -590,7 +590,7 @@ module.exports.downloading = function(state) {
   const progressPercent = percent(progress);
   return html`
     <send-archive
-      class="flex flex-col bg-white rounded shadow-light p-4 w-full max-w-sm md:w-128 dark:bg-grey-90"
+      class="flex flex-col bg-white rounded-default shadow-light p-4 w-full max-w-sm md:w-128 dark:bg-grey-90"
     >
       ${archiveInfo(archive)}
       <div class="link-primary text-sm font-medium mt-2">

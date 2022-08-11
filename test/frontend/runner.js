@@ -1,7 +1,6 @@
 /* eslint-disable no-undef, no-process-exit */
 const fs = require('fs');
 const path = require('path');
-const mkdirp = require('mkdirp');
 const puppeteer = require('puppeteer');
 const webpack = require('webpack');
 const config = require('../../webpack.config');
@@ -44,7 +43,9 @@ const server = app.listen(async function() {
     const coverage = await page.evaluate(() => __coverage__);
     if (coverage) {
       const dir = path.resolve(__dirname, '../../.nyc_output');
-      mkdirp.sync(dir);
+      fs.mkdirSync(dir, {
+        recursive: true
+      });
       fs.writeFileSync(
         path.resolve(dir, 'frontend.json'),
         JSON.stringify(coverage)

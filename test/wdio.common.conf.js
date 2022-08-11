@@ -1,9 +1,11 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
+const fs = require('fs');
 const rimraf = require('rimraf');
 const dir = path.join(__dirname, 'integration', 'downloads');
 
-mkdirp.sync(dir);
+fs.mkdirSync(dir, {
+  recursive: true
+});
 rimraf.sync(`${dir}${path.sep}*`);
 
 exports.config = {
