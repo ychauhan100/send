@@ -34,7 +34,8 @@ module.exports = async function(req) {
     safari_pinned_tab: assets.get('safari-pinned-tab.svg'),
     facebook: baseUrl + '/' + assets.get('send-fb.jpg'),
     twitter: baseUrl + '/' + assets.get('send-twitter.jpg'),
-    wordmark: assets.get('wordmark.svg') + '#logo'
+    wordmark: assets.get('wordmark.svg') + '#logo',
+    custom_css: assets.get('undefined')
   };
   Object.keys(uiAssets).forEach(index => {
     if (config.ui_custom_assets[index] !== '')
@@ -47,9 +48,8 @@ module.exports = async function(req) {
     locale,
     capabilities: { account: false },
     translate: getTranslator(locale),
-    title: 'Send',
-    description:
-      'Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever.',
+    title: config.custom_title,
+    description: config.custom_description,
     baseUrl,
     ui: {
       colors: {
