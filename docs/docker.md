@@ -96,6 +96,11 @@ See the table below for the variables and their default values.
 | UI_CUSTOM_ASSETS_FACEBOOK | | A custom header image for Facebook |
 | UI_CUSTOM_ASSETS_TWITTER | | A custom header image for Twitter |
 | UI_CUSTOM_ASSETS_WORDMARK | | A custom wordmark (Text next to the logo) |
+| UI_CUSTOM_CSS | | Allows you to define a custom CSS file for custom styling |
+| CUSTOM_FOOTER_TEXT | | Allows you to define a custom footer |
+| CUSTOM_FOOTER_URL | | Allows you to define a custom URL in your footer |
+
+Side note: If you define a custom URL and a custom footer, only the footer text will display, but will be hyperlinked to the URL.
 
 ## Examples
 
