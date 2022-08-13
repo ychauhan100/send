@@ -273,6 +273,11 @@ const conf = convict({
     default: '#003eaa',
     env: 'UI_COLOR_ACCENT'
   },
+  custom_locale: {
+    format: String,
+    default: '',
+    env: 'CUSTOM_LOCALE'
+  },
   ui_custom_assets: {
     android_chrome_192px: {
       format: String,

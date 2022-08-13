@@ -3,9 +3,18 @@ const layout = require('./layout');
 const assets = require('../common/assets');
 const getTranslator = require('./locale');
 const { getFxaConfig } = require('./fxa');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = async function(req) {
-  const locale = req.language || 'en-US';
+  const locale = (() => {
+    if (config.custom_locale != '' && fs.existsSync(path.join(__dirname,'../public/locales',config.custom_locale))) {
+        return config.custom_locale;
+    }
+    else {
+      return req.language || 'en-US';
+    }
+  })();
   let authConfig = null;
   let robots = 'none';
   if (req.route && req.route.path === '/') {
