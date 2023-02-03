@@ -17,6 +17,7 @@ export default class Archive {
   constructor(files = [], defaultTimeLimit = 86400, defaultDownloadLimit = 1) {
     this.files = Array.from(files);
     this.defaultTimeLimit = defaultTimeLimit;
+    this.defaultDownloadLimit = defaultDownloadLimit;
     this.timeLimit = defaultTimeLimit;
     this.dlimit = defaultDownloadLimit;
     this.password = null;
@@ -76,7 +77,7 @@ export default class Archive {
 
   clear() {
     this.files = [];
-    this.dlimit = 1;
+    this.dlimit = this.defaultDownloadLimit;
     this.timeLimit = this.defaultTimeLimit;
     this.password = null;
   }
