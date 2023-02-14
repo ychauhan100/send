@@ -26,7 +26,7 @@ function expiryInfo(translate, archive) {
 }
 
 function password(state) {
-  const MAX_LENGTH = 32;
+  const MAX_LENGTH = 4096;
 
   return html`
     <div class="mb-2 px-1">
