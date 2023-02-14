@@ -32,7 +32,7 @@ module.exports = function(state, emit) {
           class="w-full border-l border-t border-b rounded-l-lg rounded-r-none ${invalid
             ? 'border-red dark:border-red-40'
             : 'border-grey'} leading-loose px-2 py-1 dark:bg-grey-80"
-          maxlength="32"
+          maxlength="4096"
           autocomplete="off"
           placeholder="${state.translate('unlockInputPlaceholder')}"
           oninput="${inputChanged}"
