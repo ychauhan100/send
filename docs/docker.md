@@ -9,6 +9,7 @@ docker pull registry.gitlab.com/timvisee/send:latest
 docker run -v $PWD/uploads:/uploads -p 1443:1443 \
     -e 'DETECT_BASE_URL=true' \
     -e 'REDIS_HOST=localhost' \
+    -e 'FILE_DIR=/uploads' \
     registry.gitlab.com/timvisee/send:latest
 ```
 
