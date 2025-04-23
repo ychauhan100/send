@@ -274,10 +274,10 @@ const conf = convict({
     default: '',
     env: 'SEND_UPLOAD_AREA_NOTICE_HTML'
   },
-  download_list_notice_html: {
+  uploads_list_notice_html: {
     format: String,
     default: '',
-    env: 'SEND_DOWNLOAD_LIST_NOTICE_HTML'
+    env: 'SEND_UPLOADS_LIST_NOTICE_HTML'
   },
   download_notice_html: {
     format: String,

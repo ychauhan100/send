@@ -18,12 +18,12 @@ module.exports = function(state, emit) {
     left = archiveTile.empty(state, emit);
   }
 
-  if (archives.length > 0 && state.WEB_UI.DOWNLOAD_LIST_NOTICE_HTML) {
+  if (archives.length > 0 && state.WEB_UI.UPLOADS_LIST_NOTICE_HTML) {
     archives.push(html`
       <p
         class="w-full p-2 border-default dark:border-grey-70 rounded-default text-orange-60 bg-yellow-40 text-center leading-normal"
       >
-        ${raw(state.WEB_UI.DOWNLOAD_LIST_NOTICE_HTML)}
+        ${raw(state.WEB_UI.UPLOADS_LIST_NOTICE_HTML)}
       </p>
     `);
   }
