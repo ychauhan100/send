@@ -486,12 +486,12 @@ module.exports.empty = function(state, emit) {
             })}
           </button>
         `;
-  const warning = state.WEB_UI.UPLOAD_AREA_WARNING_HTML
+  const uploadNotice = state.WEB_UI.UPLOAD_AREA_NOTICE_HTML
     ? html`
         <p
           class="w-full mt-8 p-2 border-default dark:border-grey-70 rounded-default text-orange-60 bg-yellow-40 text-center leading-normal"
         >
-          ${raw(state.WEB_UI.UPLOAD_AREA_WARNING_HTML)}
+          ${raw(state.WEB_UI.UPLOAD_AREA_NOTICE_HTML)}
         </p>
       `
     : '';
@@ -536,7 +536,7 @@ module.exports.empty = function(state, emit) {
       >
         ${state.translate('addFilesButton')}
       </label>
-      ${upsell} ${warning}
+      ${upsell} ${uploadNotice}
     </send-upload-area>
   `;
 
@@ -569,12 +569,12 @@ module.exports.preview = function(state, emit) {
           ${archiveDetails(state.translate, archive)}
         </div>
       `;
-  const warning = state.WEB_UI.DOWNLOAD_WARNING_HTML
+  const notice = state.WEB_UI.DOWNLOAD_NOTICE_HTML
     ? html`
         <p
           class="w-full mt-4 p-2 border-default dark:border-grey-70 rounded-default text-orange-60 bg-yellow-40 text-center leading-normal"
         >
-          ${raw(state.WEB_UI.DOWNLOAD_WARNING_HTML)}
+          ${raw(state.WEB_UI.DOWNLOAD_NOTICE_HTML)}
         </p>
       `
     : '';
@@ -594,7 +594,7 @@ module.exports.preview = function(state, emit) {
       >
         ${state.translate('downloadButtonLabel')}
       </button>
-      ${warning}
+      ${notice}
     </send-archive>
   `;
 
