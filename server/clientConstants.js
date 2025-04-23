@@ -16,9 +16,9 @@ module.exports = {
     CUSTOM_FOOTER_TEXT: config.custom_footer_text,
     CUSTOM_FOOTER_URL: config.custom_footer_url,
     MAIN_NOTICE_HTML: config.main_notice_html,
-    UPLOAD_AREA_WARNING_HTML: config.upload_area_warning_html,
+    UPLOAD_AREA_NOTICE_HTML: config.upload_area_notice_html,
     DOWNLOAD_LIST_NOTICE_HTML: config.download_list_notice_html,
-    DOWNLOAD_WARNING_HTML: config.download_warning_html,
+    DOWNLOAD_NOTICE_HTML: config.download_notice_html,
     COLORS: {
       PRIMARY: config.ui_color_primary,
       ACCENT: config.ui_color_accent
