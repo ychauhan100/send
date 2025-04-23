@@ -264,10 +264,20 @@ const conf = convict({
     default: '',
     env: 'CUSTOM_FOOTER_URL'
   },
+  main_notice_html: {
+    format: String,
+    default: '',
+    env: 'SEND_MAIN_NOTICE_HTML'
+  },
   upload_area_warning_html: {
     format: String,
     default: '',
     env: 'SEND_UPLOAD_AREA_WARNING_HTML'
+  },
+  download_list_notice_html: {
+    format: String,
+    default: '',
+    env: 'SEND_DOWNLOAD_LIST_NOTICE_HTML'
   },
   download_warning_html: {
     format: String,
