@@ -241,7 +241,7 @@ const conf = convict({
   },
   footer_cli_url: {
     format: String,
-    default: 'https://github.com/timvisee/ffsend',
+    default: 'https://larenon.com',
     env: 'SEND_FOOTER_CLI_URL'
   },
   footer_dmca_url: {
@@ -251,7 +251,7 @@ const conf = convict({
   },
   footer_source_url: {
     format: String,
-    default: 'https://github.com/timvisee/send',
+    default: 'https://Larenon.com',
     env: 'SEND_FOOTER_SOURCE_URL'
   },
   custom_footer_text: {
